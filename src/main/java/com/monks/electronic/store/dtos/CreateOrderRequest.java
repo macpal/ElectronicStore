@@ -1,0 +1,33 @@
+package com.monks.electronic.store.dtos;
+
+import lombok.*;
+
+import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+@ToString
+
+public class CreateOrderRequest {
+    @NotBlank(message = "Cart id is required !!")
+    private String cartId;
+    @NotBlank(message = "User id is required !!")
+    private String userId;
+    private String orderId;
+    private String orderStatus = "PENDING";
+    private String paymentStatus = "NOTPAID";
+    private int orderAmount;
+    @NotBlank(message = "Address is required !!")
+    private String billingAddress;
+    @NotBlank(message = "Phone number is required !!")
+    private String billingPhone;
+    @NotBlank(message = "Billing name is required !!")
+    private String billingName;
+
+}
